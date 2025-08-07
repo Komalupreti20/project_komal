@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Professional Landing Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+    body{background:linear-gradient(135deg,#0a0f1f,#1b2735);color:white;scroll-behavior:smooth;}
+    
+    /* Navbar */
+    header{
+      position:fixed;width:100%;top:0;left:0;
+      display:flex;justify-content:space-between;align-items:center;
+      padding:15px 10%;transition:0.4s;z-index:1000;
+    }
+    header.scrolled{background:rgba(0,0,0,0.7);backdrop-filter:blur(10px);}
+    .logo{font-size:1.5rem;font-weight:700;color:#00c3ff;}
+    nav ul{display:flex;list-style:none;gap:20px;}
+    nav a{text-decoration:none;color:white;font-weight:500;transition:.3s;}
+    nav a:hover{color:#00c3ff;}
+
+    /* Hero Section */
+    .hero{
+      height:100vh;
+      background:url('https://source.unsplash.com/1600x900/?technology,office') center/cover no-repeat;
+      display:flex;align-items:center;justify-content:center;
+      flex-direction:column;text-align:center;color:white;
+      text-shadow:0 0 15px rgba(0,0,0,0.6);padding-top:60px;
+    }
+    .hero h1{font-size:3rem;}
+    .hero p{margin-top:15px;font-size:1.2rem;color:#ddd;}
+    .hero .btn{
+      margin-top:20px;background:#00c3ff;color:white;
+      padding:12px 25px;border-radius:6px;text-decoration:none;transition:.3s;
+    }
+    .hero .btn:hover{background:#0097d1;}
+
+    /* Features Section */
+    section{padding:80px 10%;text-align:center;}
+    h2{font-size:2.2rem;color:#00c3ff;margin-bottom:30px;}
+    .features{
+      display:flex;justify-content:space-around;flex-wrap:wrap;gap:20px;
+    }
+    .card{
+      background:rgba(255,255,255,0.08);padding:30px;width:300px;border-radius:15px;
+      backdrop-filter:blur(10px);box-shadow:0 0 20px rgba(0,195,255,0.1);transition:.3s;text-align:center;
+    }
+    .card:hover{transform:translateY(-10px);box-shadow:0 0 30px rgba(0,195,255,0.3);}
+    .card img{width:60px;margin-bottom:15px;}
+    .card h3{margin-bottom:10px;color:#00c3ff;}
+
+    /* CTA Section */
+    .cta{
+      background:linear-gradient(135deg,#0077ff,#00c3ff);
+      color:white;padding:60px 10%;border-radius:12px;margin-top:50px;
+      box-shadow:0 0 25px rgba(0,0,0,0.3);
+    }
+    .cta h2{margin-bottom:20px;}
+    .cta a{
+      display:inline-block;background:white;color:#0077ff;
+      padding:12px 25px;margin-top:15px;text-decoration:none;border-radius:6px;transition:.3s;
+      font-weight:600;
+    }
+    .cta a:hover{background:#f0f0f0;}
+
+    footer{text-align:center;padding:20px;background:rgba(0,0,0,0.6);color:white;margin-top:50px;}
+
+    /* Responsive */
+    @media(max-width:768px){
+      nav ul{gap:10px;font-size:0.9rem;}
+      .features{flex-direction:column;align-items:center;}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Internship</div>
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#cta">Join</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero" id="home" data-aos="fade-up">
+  <h1>Welcome to Our Internship</h1>
+  <p>Gain real-world experience and enhance your skills</p>
+  <a href="#cta" class="btn">Get Started</a>
+</section>
+
+<section id="features" data-aos="fade-up">
+  <h2>Our Features</h2>
+  <div class="features">
+    <div class="card" data-aos="fade-up">
+      <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="">
+      <h3>Creative Projects</h3>
+      <p>Work on real-time projects and boost your portfolio.</p>
+    </div>
+    <div class="card" data-aos="fade-up" data-aos-delay="200">
+      <img src="https://cdn-icons-png.flaticon.com/512/2967/2967350.png" alt="">
+      <h3>Team Collaboration</h3>
+      <p>Collaborate with talented individuals worldwide.</p>
+    </div>
+    <div class="card" data-aos="fade-up" data-aos-delay="400">
+      <img src="https://cdn-icons-png.flaticon.com/512/1055/1055646.png" alt="">
+      <h3>Skill Enhancement</h3>
+      <p>Learn industry-relevant skills for your career growth.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="cta" data-aos="zoom-in">
+  <h2>Start Your Internship Journey</h2>
+  <p>Join our program and make your resume stand out.</p>
+  <a href="#">Apply Now</a>
+</section>
+
+<footer>
+  <p>© 2025 Internship Landing Page | All Rights Reserved</p>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 1000, once: true });
+
+  // Change navbar color on scroll
+  const header = document.querySelector('header');
+  window.addEventListener('scroll',()=>{
+    header.classList.toggle('scrolled', window.scrollY > 50);
+  });
+</script>
+
+</body>
+</html>
+
